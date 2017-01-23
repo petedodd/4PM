@@ -1,0 +1,98 @@
+Afghanistan
+Algeria
+Angola
+Argentina
+Australia
+Azerbaijan
+Bahamas
+Bangladesh
+Belarus
+Belize
+Benin
+Bolivia (Plurinational State of)
+Botswana
+Brazil
+Burkina Faso
+Burundi
+Cameroon
+Cape Verde
+Central African Republic
+Chad
+Colombia
+Costa Rica
+Cuba
+Côte d'Ivoire
+Democratic Republic of the Congo
+Djibouti
+Dominican Republic
+Ecuador
+Egypt
+El Salvador
+Equatorial Guinea
+Eritrea
+Gabon
+Gambia
+Georgia
+Ghana
+Greece
+Guatemala
+Guinea
+Guyana
+Haiti
+Honduras
+Indonesia
+Iran (Islamic Republic of)
+Italy
+Jamaica
+Kazakhstan
+Kenya
+Latvia
+Lesotho
+Liberia
+Madagascar
+Malawi
+Malaysia
+Mali
+Mauritania
+Mexico
+Mongolia
+Morocco
+Mozambique
+Myanmar
+Namibia
+Nepal
+Nicaragua
+Niger
+Pakistan
+Panama
+Papua New Guinea
+Paraguay
+Peru
+Philippines
+Republic of Moldova
+Rwanda
+Senegal
+Sierra Leone
+Somalia
+South Africa
+South Sudan
+Spain
+Sri Lanka
+Sudan
+Suriname
+Swaziland
+Tajikistan
+Thailand
+Togo
+Trinidad and Tobago
+Uganda
+Ukraine
+United Republic of Tanzania
+Uruguay
+Uzbekistan
+Venezuela (Bolivarian Republic of)
+Viet Nam
+Yemen
+Zambia
+Zimbabwe
+Global
