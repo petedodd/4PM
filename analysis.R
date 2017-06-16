@@ -51,8 +51,12 @@ ontxY <- getLNparms(1.9*1e-2,(1e-2*(7.1-.5)/3.92)^2)
 ontxO <- getLNparms(.8*1e-2,(1e-2*(2.1-.3)/3.92)^2)
 
 ## HIV/ART ORs
-hivartOR <- list(mn = c(2.6392988, -0.7073754),
-                 sg = matrix(c(0.2388659, -0.2384390, -0.2384390,  0.7219289),2,2))
+## revised version from frequentist approach
+## mean =  2.6375681 -0.5683867
+## V = [[0.2325509 -0.2325509],[-0.2325509  0.6367345]]
+
+hivartOR <- list(mn = c(2.6375681, -0.5683867),
+                 sg = matrix(c(0.2325509, -0.2325509,-0.2325509,  0.6367345),2,2))
 hivartOR$U <- chol(hivartOR$sg)
 
 ## ## inspect if sensible
@@ -140,10 +144,13 @@ abline(v=14.9*1e-2);abline(v=11.5*1e-2,lty=2);abline(v=19.1*1e-2,lty=2);
 dev.off()
 
 ## NB--- this is BETA not lnormal
-## from roulette self-elicitation (JAS)
+## from roulette elicitation -- stored in data/ez.txt
+## see data/elicit.R for methods todo
+
+ez <- scan('data/ez.txt')
 
 ## HO
-notxHO <- list(a=16.18,b=2.64)
+notxHO <- list(a=ez[5],b=ez[6])
 quantile(rbeta(n=1e4,notxHO$a,notxHO$b),probs=c(.025,.5,.975))
 
 png('test/test_CFR_notx_HO.png')
@@ -152,7 +159,7 @@ curve(dbeta(x,notxHO$a,notxHO$b),from=0,to=1,n=1e3,col=2,
 dev.off()
 
 ## HY
-notxHY <- list(a=33.18,b=3.98)
+notxHY <- list(a=ez[1],b=ez[2])
 quantile(rbeta(n=1e4,notxHY$a,notxHY$b),probs=c(.025,.5,.975))
 
 png('test/test_CFR_notx_HY.png')
@@ -162,7 +169,7 @@ dev.off()
 
 
 ## HAY
-notxHAY <- list(a=5.08,b=2.98)
+notxHAY <- list(a=ez[3],b=ez[4])
 quantile(rbeta(n=1e4,notxHAY$a,notxHAY$b),probs=c(.025,.5,.975))
 
 png('test/test_CFR_notx_HAY.png')
@@ -172,7 +179,7 @@ dev.off()
 
 ## HAO
 ## convert gamma to beta
-notxHAO <- list(a=2.885,b=3.326)
+notxHAO <- list(a=ez[7],b=ez[8])
 quantile(rbeta(n=1e4,notxHAO$a,notxHAO$b),probs=c(.025,.5,.975))
 
 png('test/test_CFR_notx_HAO.png')
@@ -201,6 +208,9 @@ dev.off()
 ## ------- load data from preparation.R -----------
 load('data/BB.Rdata')                        # -- pick up here
 load('data/whokey.Rdata')
+u5p <- read.csv('data/u5_2015.csv')
+u5p <- merge(u5p,WHOkey,by='iso_numeric')
+u5pr <- as.data.table(u5p)[,list(u5=sum(u5)),by=g_whoregion]
 
 ## to cope with potential zeros
 QG <- function(r,shape,scale){
@@ -272,11 +282,11 @@ hist(IRRhiv(runif(1e4)))
 hist(HRart(runif(1e4)))
 
 ## some NAs in notification data
-cat(as.character(BB$country[is.na(BB$notifs)]),file='clean_NAnotifs.txt')
+cat(as.character(BB$country[is.na(BB$notifs)]),file='test/clean_NAnotifs.txt')
 sum(is.na(BB$notifs))                   #0
-cat(as.character(BB$country[is.na(BB$notifsY)]),file='clean_NAnotifsY.txt')
+cat(as.character(BB$country[is.na(BB$notifsY)]),file='test/clean_NAnotifsY.txt')
 sum(is.na(BB$notifsY))                   #0
-cat(as.character(BB$country[is.na(BB$notifsO)]),file='clean_NAnotifsO.txt')
+cat(as.character(BB$country[is.na(BB$notifsO)]),file='test/clean_NAnotifsO.txt')
 sum(is.na(BB$notifsO))                   #0
 
 ## no chnage...
@@ -294,7 +304,7 @@ txstat <- c('On tx (HIV-)','Off tx (HIV-)','On tx (HIV+)','Off tx (HIV+)')
 
 ## ## ---------------- same but with age now --------------
 ## change sensitivity analyses here!!
-useHIVneg <- FALSE                      #use the elicited data or be conservative
+useHIVneg <- TRUE                      #use the elicited data or be conservative
 sensNote <- FALSE                       #sensitivity for private sectors?
 ## stuff for note=tx sensitivity analysis - from top 10
 senscns <- c('IND','CHN','NGA','IDN','COD','BGD','PAK','MOZ','TZA','VNM')
@@ -416,10 +426,12 @@ RESATOT <- RESA[,list(total = sum(DeathsOnTx,na.rm=TRUE)+sum(DeathsOffTx,na.rm=T
 RESATOTS <- RESATOT[,list(mid=median(total),lo=quantile(total,probs =.025),hi=quantile(total,probs=.975))] #summarize totals
 
 ## inspect
-png('test/global_hist.png')
-hist(RESATOT$total,xlim=c(0e5,3.5e5),breaks=20)
-abline(v=RESATOTS$mid,col=2,lwd=3);abline(v=RESATOTS$lo,lty=2);abline(v=RESATOTS$hi,lty=2)
-dev.off()
+if(!sensNote & !useHIVneg){
+    png('test/global_hist.png')
+    hist(RESATOT$total,xlim=c(0e5,3.5e5),breaks=20)
+    abline(v=RESATOTS$mid,col=2,lwd=3);abline(v=RESATOTS$lo,lty=2);abline(v=RESATOTS$hi,lty=2)
+    dev.off()
+}
 
 ## regional totals
 RESAG <- RESA[,list(OnTx=sum(DeathsOnTx),OffTx=sum(DeathsOffTx),
@@ -486,8 +498,18 @@ MID <- rbind(MID,gm)
 LO <- rbind(LO,gl)
 HI <- rbind(HI,gh)
 
+## regional denominators
+u15 <- as.data.table(BB)[,list(u15=sum(e.pop.014)),by=g_whoregion]
+u15denom <- u15[order(as.character(g_whoregion)),u15]
+u15denom <- c(u15denom,sum(u15denom))      #denominator for regional u15 pops
+u5denom <- u5pr[order(as.character(g_whoregion)),u5]
+u5denom <- c(u5denom,sum(u5denom))      #denominator for regional u5 pops
+u5denom <- u5denom*1e3                  #change units to be same as u15
 
-
+## extra col for table
+1e5*MID[,5]/u15denom
+1e5*LO[,5]/u15denom
+1e5*HI[,5]/u15denom
 
 ## youngs ----------
 RESATy <- RESA[,list(OnTx=sum(DeathsOnTxY),OffTx=sum(DeathsOffTxY),
@@ -556,6 +578,11 @@ LO <- rbind(LO,gl)
 HI <- rbind(HI,gh)
 
 
+## extra col for table
+1e5*MID[,5]/u5denom
+1e5*LO[,5]/u5denom
+1e5*HI[,5]/u5denom
+
 
 
 ## compare young/old
@@ -596,8 +623,12 @@ mosdat <- data.frame(cat = names(RESATBM),
                      hiv = rep(c('HIV -ve','HIV +ve'),each=4))
 
 pcuntx <- 1e2*sum(mosdat$value[mosdat$tbtx=='Untreated for TB']) / sum(mosdat$value)
+fn <- paste0('tables/pcuntx',useHIVneg,'_priv',sensNote,'.txt')
+cat(pcuntx,file=fn)
 
 pchiv <- 1e2*sum(mosdat$value[mosdat$hiv=='HIV +ve']) / sum(mosdat$value)
+fn <- paste0('tables/pchiv',useHIVneg,'_priv',sensNote,'.txt')
+cat(pchiv,file=fn)
 
 
 ## ------- country data ---------
@@ -625,6 +656,10 @@ tmp$country <- factor(tmp$country,levels=rev(tmp$country),ordered=TRUE)
 100*sum(RESAc[1:10,age])/sum(RESAc[,age])
 
 pcgs <- 100*(RESAc[1:10,age])/sum(RESAc[,age])
+fn <- paste0('tables/pcgs',useHIVneg,'_priv',sensNote,'.txt')
+cat(pcgs,file=fn)
+fn <- paste0('tables/top10countries',useHIVneg,'_priv',sensNote,'.csv')
+write.csv(file=fn,cbind(RESAc[1:10,],pcgs=round(pcgs),cpcgs=round(cumsum(pcgs))))
 
 
 RESAC <- RESA[,list(deaths=midr(DeathsOnTx+DeathsOffTx+DeathsOnTxH+DeathsOffTxH),
@@ -657,13 +692,15 @@ RESAC <- RESA[,list(deaths=midr(DeathsOnTx+DeathsOffTx+DeathsOnTxH+DeathsOffTxH)
 RESAC <- merge(RESAC,WHOkey[,c(1,3)],by='iso3')
 
 ## NB this is per MILLE not per CENT
-fn <- paste0('tables/countries',useHIVneg,'_priv',sensNote,'.csv')
-write.csv(file=fn,RESAC)
-
-RESACH <- RESAC[HIV>0,list(iso3,HIV,HIVinTB,HIVinDeaths)]
-fn <- paste0('tables/countries_HIVpm',useHIVneg,'_priv',sensNote,'.csv')
-write.csv(file=fn,RESACH)
-
+if(!sensNote & !useHIVneg){
+    fn <- paste0('tables/countries',useHIVneg,'_priv',sensNote,'.csv')
+    write.csv(file=fn,RESAC)
+    RESACH <- RESAC[HIV>0,list(iso3,HIV,HIVinTB,HIVinDeaths)]
+    fn <- paste0('tables/countries_HIVpm',useHIVneg,'_priv',sensNote,'.csv')
+    write.csv(file=fn,RESACH)
+}
 
 RESAC <- merge(RESAC,BB[,c('iso3','e.pop.014')],by='iso3')
-RESAC <- RESAC[,mortality:=1e5*deaths/e.pop.014]
+RESAC <- merge(RESAC,u5p[,c('iso3','u5')],by='iso3')
+RESAC <- RESAC[,mortalityu15:=1e5*deaths/e.pop.014]
+RESAC <- RESAC[,mortalityu5:=1e5*deathsY/(1e3*u5)]

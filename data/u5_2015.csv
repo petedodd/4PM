@@ -1,0 +1,242 @@
+"","area","iso_numeric","year","u5"
+"1","Afghanistan",4,2015,4950
+"2","AFRICA",903,2015,185175
+"3","Albania",8,2015,185
+"4","Algeria",12,2015,4590
+"5","Angola",24,2015,4718
+"6","Antigua and Barbuda",28,2015,8
+"7","Argentina",32,2015,3718
+"8","Armenia",51,2015,208
+"9","Aruba",533,2015,6
+"10","ASIA",935,2015,367458
+"11","Australia",36,2015,1546
+"12","Australia/New Zealand",927,2015,1854
+"13","Austria",40,2015,404
+"14","Azerbaijan",31,2015,930
+"15","Bahamas",44,2015,29
+"16","Bahrain",48,2015,109
+"17","Bangladesh",50,2015,15332
+"18","Barbados",52,2015,18
+"19","Belarus",112,2015,586
+"20","Belgium",56,2015,653
+"21","Belize",84,2015,39
+"22","Benin",204,2015,1708
+"23","Bhutan",64,2015,66
+"24","Bolivia (Plurinational State of)",68,2015,1186
+"25","Bosnia and Herzegovina",70,2015,173
+"26","Botswana",72,2015,266
+"27","Brazil",76,2015,15032
+"28","Brunei Darussalam",96,2015,33
+"29","Bulgaria",100,2015,337
+"30","Burkina Faso",854,2015,3144
+"31","Burundi",108,2015,2062
+"32","Côte d'Ivoire",384,2015,3667
+"33","Cabo Verde",132,2015,53
+"34","Cambodia",116,2015,1772
+"35","Cameroon",120,2015,3738
+"36","Canada",124,2015,1942
+"37","Caribbean",915,2015,3593
+"38","Central African Republic",140,2015,708
+"39","Central America",916,2015,16406
+"40","Central Asia",5500,2015,7627
+"41","Chad",148,2015,2632
+"42","Channel Islands",830,2015,8
+"43","Chile",152,2015,1171
+"44","China",156,2015,83186
+"45","China, Hong Kong SAR",344,2015,368
+"46","China, Macao SAR",446,2015,33
+"47","Colombia",170,2015,3738
+"48","Comoros",174,2015,120
+"49","Congo",178,2015,759
+"50","Costa Rica",188,2015,350
+"51","Croatia",191,2015,208
+"52","Cuba",192,2015,588
+"53","Curaçao",531,2015,10
+"54","Cyprus",196,2015,66
+"55","Czech Republic",203,2015,538
+"56","Dem. People's Republic of Korea",408,2015,1747
+"57","Democratic Republic of the Congo",180,2015,13875
+"58","Denmark",208,2015,295
+"59","Djibouti",262,2015,102
+"60","Dominican Republic",214,2015,1062
+"61","Eastern Africa",910,2015,64239
+"62","Eastern Asia",906,2015,94202
+"63","Eastern Europe",923,2015,16976
+"64","Ecuador",218,2015,1610
+"65","Egypt",818,2015,12116
+"66","El Salvador",222,2015,520
+"67","Equatorial Guinea",226,2015,129
+"68","Eritrea",232,2015,814
+"69","Estonia",233,2015,72
+"70","Ethiopia",231,2015,14602
+"71","EUROPE",908,2015,39951
+"72","Fiji",242,2015,88
+"73","Finland",246,2015,304
+"74","France",250,2015,3926
+"75","French Guiana",254,2015,33
+"76","French Polynesia",258,2015,23
+"77","Gabon",266,2015,239
+"78","Gambia",270,2015,366
+"79","Georgia",268,2015,275
+"80","Germany",276,2015,3385
+"81","Ghana",288,2015,4056
+"82","Greece",300,2015,533
+"83","Grenada",308,2015,10
+"84","Guadeloupe",312,2015,31
+"85","Guam",316,2015,14
+"86","Guatemala",320,2015,2089
+"87","Guinea",324,2015,2046
+"88","Guinea-Bissau",624,2015,289
+"89","Guyana",328,2015,67
+"90","Haiti",332,2015,1238
+"91","High-income countries",1503,2015,81412
+"92","Honduras",340,2015,816
+"93","Hungary",348,2015,463
+"94","Iceland",352,2015,23
+"95","India",356,2015,123711
+"96","Indonesia",360,2015,24864
+"97","Iran (Islamic Republic of)",364,2015,6856
+"98","Iraq",368,2015,5727
+"99","Ireland",372,2015,354
+"100","Israel",376,2015,832
+"101","Italy",380,2015,2570
+"102","Jamaica",388,2015,204
+"103","Japan",392,2015,5269
+"104","Jordan",400,2015,981
+"105","Kazakhstan",398,2015,1949
+"106","Kenya",404,2015,7166
+"107","Kiribati",296,2015,15
+"108","Kuwait",414,2015,347
+"109","Kyrgyzstan",417,2015,781
+"110","Lao People's Democratic Republic",418,2015,838
+"111","LATIN AMERICA AND THE CARIBBEAN",904,2015,53496
+"112","Latvia",428,2015,95
+"113","Least developed countries",941,2015,139575
+"114","Lebanon",422,2015,462
+"115","Lesotho",426,2015,278
+"116","Less developed regions",902,2015,602202
+"117","Less developed regions, excluding China",948,2015,517641
+"118","Less developed regions, excluding least developed countries",934,2015,462627
+"119","Liberia",430,2015,701
+"120","Libya",434,2015,649
+"121","Lithuania",440,2015,152
+"122","Low-income countries",1500,2015,101504
+"123","Lower-middle-income countries",1501,2015,315140
+"124","Luxembourg",442,2015,31
+"125","Madagascar",450,2015,3771
+"126","Malawi",454,2015,2954
+"127","Malaysia",458,2015,2477
+"128","Maldives",462,2015,38
+"129","Mali",466,2015,3271
+"130","Malta",470,2015,19
+"131","Martinique",474,2015,21
+"132","Mauritania",478,2015,601
+"133","Mauritius",480,2015,71
+"134","Mayotte",175,2015,35
+"135","Melanesia",928,2015,1220
+"136","Mexico",484,2015,11617
+"137","Micronesia",954,2015,52
+"138","Micronesia (Fed. States of)",583,2015,12
+"139","Middle Africa",911,2015,26827
+"140","Middle-income countries",1517,2015,487765
+"141","Mongolia",496,2015,338
+"142","Montenegro",499,2015,37
+"143","More developed regions",901,2015,68726
+"144","Morocco",504,2015,3421
+"145","Mozambique",508,2015,4816
+"146","Myanmar",104,2015,4565
+"147","Namibia",516,2015,338
+"148","Nepal",524,2015,2807
+"149","Netherlands",528,2015,884
+"150","New Caledonia",540,2015,20
+"151","New Zealand",554,2015,308
+"152","Nicaragua",558,2015,605
+"153","Niger",562,2015,4145
+"154","Nigeria",566,2015,31109
+"155","Northern Africa",912,2015,27760
+"156","NORTHERN AMERICA",905,2015,21651
+"157","Northern Europe",924,2015,6273
+"158","Norway",578,2015,314
+"159","OCEANIA",909,2015,3196
+"160","Oman",512,2015,386
+"161","Other non-specified areas",158,2015,974
+"162","Pakistan",586,2015,24663
+"163","Panama",591,2015,368
+"164","Papua New Guinea",598,2015,996
+"165","Paraguay",600,2015,673
+"166","Peru",604,2015,3020
+"167","Philippines",608,2015,11255
+"168","Poland",616,2015,1995
+"169","Polynesia",957,2015,70
+"170","Portugal",620,2015,439
+"171","Puerto Rico",630,2015,221
+"172","Qatar",634,2015,133
+"173","Réunion",638,2015,65
+"174","Republic of Korea",410,2015,2288
+"175","Republic of Moldova",498,2015,223
+"176","Romania",642,2015,924
+"177","Russian Federation",643,2015,9166
+"178","Rwanda",646,2015,1694
+"179","Saint Lucia",662,2015,14
+"180","Saint Vincent and the Grenadines",670,2015,8
+"181","Samoa",882,2015,25
+"182","Sao Tome and Principe",678,2015,30
+"183","Saudi Arabia",682,2015,3162
+"184","Senegal",686,2015,2601
+"185","Serbia",688,2015,451
+"186","Seychelles",690,2015,8
+"187","Sierra Leone",694,2015,1004
+"188","Singapore",702,2015,269
+"189","Slovakia",703,2015,283
+"190","Slovenia",705,2015,111
+"191","Solomon Islands",90,2015,82
+"192","Somalia",706,2015,1971
+"193","South Africa",710,2015,5370
+"194","South America",931,2015,33498
+"195","South Sudan",728,2015,1956
+"196","South-Central Asia",921,2015,187693
+"197","South-Eastern Asia",920,2015,57816
+"198","Southern Africa",913,2015,6426
+"199","Southern Asia",5501,2015,180065
+"200","Southern Europe",925,2015,6991
+"201","Spain",724,2015,2144
+"202","Sri Lanka",144,2015,1643
+"203","State of Palestine",275,2015,703
+"204","Sub-Saharan Africa",947,2015,157415
+"205","Sudan",729,2015,5952
+"206","Suriname",740,2015,48
+"207","Swaziland",748,2015,173
+"208","Sweden",752,2015,590
+"209","Switzerland",756,2015,424
+"210","Syrian Arab Republic",760,2015,2192
+"211","Tajikistan",762,2015,1175
+"212","TFYR Macedonia",807,2015,115
+"213","Thailand",764,2015,3799
+"214","Timor-Leste",626,2015,204
+"215","Togo",768,2015,1160
+"216","Tonga",776,2015,13
+"217","Trinidad and Tobago",780,2015,96
+"218","Tunisia",788,2015,982
+"219","Turkey",792,2015,6821
+"220","Turkmenistan",795,2015,528
+"221","Uganda",800,2015,7278
+"222","Ukraine",804,2015,2461
+"223","United Arab Emirates",784,2015,491
+"224","United Kingdom",826,2015,4058
+"225","United Republic of Tanzania",834,2015,9398
+"226","United States of America",840,2015,19701
+"227","United States Virgin Islands",850,2015,7
+"228","Upper-middle-income countries",1502,2015,172625
+"229","Uruguay",858,2015,241
+"230","Uzbekistan",860,2015,3195
+"231","Vanuatu",548,2015,35
+"232","Venezuela (Bolivarian Republic of)",862,2015,2960
+"233","Viet Nam",704,2015,7741
+"234","Western Africa",914,2015,59922
+"235","Western Asia",922,2015,27746
+"236","Western Europe",926,2015,9712
+"237","Western Sahara",732,2015,50
+"238","WORLD",900,2015,670929
+"239","Yemen",887,2015,3924
+"240","Zambia",894,2015,2850
+"241","Zimbabwe",716,2015,2505
